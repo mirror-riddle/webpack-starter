@@ -38,4 +38,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+  },
 };
