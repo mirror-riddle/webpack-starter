@@ -1,0 +1,23 @@
+.container {
+  padding-top: 72px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  padding: 16px;
+  font-family: Monaco;
+  background-color: black;
+  color: white;
+}
+
+.button {
+  padding: 16px;
+  margin-top: 16px;
+  cursor: pointer;
+}

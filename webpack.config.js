@@ -28,6 +28,21 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         use: 'babel-loader',
       },
+      {
+        test: /\.(css)$/,
+        include: path.resolve(__dirname, 'src'),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]_[local]_[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
