@@ -12,16 +12,23 @@ const paths = {
 const RootPage = () => {
   return (
     <div className={styles.container}>
-      <ul>
-        <Link to={paths.randomKey}>
-          <li className={styles.li}>Random Key</li>
-        </Link>
-      </ul>
-      <Switch>
-        <Route path={paths.randomKey}>
-          <RandomKey />
-        </Route>
-      </Switch>
+      <div className={styles.sider}>
+        <ul>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to={paths.randomKey}>
+            <li>Random Key</li>
+          </Link>
+        </ul>
+      </div>
+      <div className={styles.content}>
+        <Switch>
+          <Route path={paths.randomKey}>
+            <RandomKey />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 };

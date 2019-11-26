@@ -1,7 +1,14 @@
 .container {
-  padding-top: 72px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
 }
 
-.li {
-  display: inline;
+/*
+.sider {
+
+}
+*/
+
+.content {
+  padding-top: 16px;
 }
