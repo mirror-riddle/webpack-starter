@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 
-import styles from './index.css';
+import { RandomKey } from 'components/random-key';
 
-import { RandomKey } from '../../components/random-key';
+import styles from './index.css';
 
 const paths = {
   randomKey: '/random-key',
