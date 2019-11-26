@@ -52,6 +52,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
