@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.jsx',
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
     moduleIds: 'hashed',
@@ -53,9 +53,10 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
     host: '0.0.0.0',
+    openPage: 'webpack-starter',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
