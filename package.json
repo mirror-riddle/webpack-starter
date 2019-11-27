@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "gh-page": "webpack --mode=production --output-path=docs"
+    "gh-page": "webpack --mode=production --output-path=docs --output-public-path=webpack-starter"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
