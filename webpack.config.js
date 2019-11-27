@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'scripts'),
+    path: path.resolve(__dirname, 'docs'),
   },
   optimization: {
     moduleIds: 'hashed',
@@ -49,7 +49,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, 'index.html'),
       template: path.resolve(__dirname, 'public/index.html'),
     }),
   ],
