@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   optimization: {
     moduleIds: 'hashed',
@@ -53,10 +54,10 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'public'),
     historyApiFallback: true,
     host: '0.0.0.0',
-    openPage: 'webpack-starter',
+    // openPage: 'webpack-starter',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
