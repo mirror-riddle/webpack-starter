@@ -9,3 +9,6 @@ personal webpack starter for react.
     yarn           // install
     yarn start     // start
 
+## Demo
+
+[github page](https://mirror-riddle.github.io/webpack-starter)
