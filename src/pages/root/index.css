@@ -1,14 +1,15 @@
 .container {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 4fr;
 }
 
 /*
-.sider {
+.header {
 
 }
 */
 
 .content {
-  padding-top: 16px;
+  padding: 8px;
 }

@@ -12,7 +12,7 @@ const paths = {
 const RootPage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.sider}>
+      <div className={styles.header}>
         <ul>
           <Link to="/">
             <li>Home</li>
