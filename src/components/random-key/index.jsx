@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 
 import styles from './index.css';
 
@@ -16,9 +17,9 @@ const RandomKey = () => {
   return (
     <div className={styles.content}>
       <code className={styles.code}>{key}</code>
-      <button className={styles.button} onClick={changeKey} type="button">
+      <Button variant="contained" color="primary" onClick={changeKey}>
         change key
-      </button>
+      </Button>
     </div>
   );
 };
