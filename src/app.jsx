@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { RootPage } from './pages/root';
 
 const App = () => (
+  // <Router basename="/webpack-starter/website">
   <Router>
     <Route path="/">
       <RootPage />
