@@ -5,10 +5,13 @@
 
 .code {
   padding: 16px;
+  font-size: 16px;
+  line-height: 16px;
   font-family: Monaco;
-  background-color: black;
-  color: white;
-  min-width: 150px;
-  text-align: center;
   margin-right: 16px;
+  height: 48px;
+  width: 180px;
+  color: white;
+  text-align: center;
+  background-color: black;
 }

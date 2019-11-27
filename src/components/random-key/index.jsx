@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@material-ui/core';
 
 import styles from './index.css';
 
-const randomKey = () =>
-  Math.random()
-    .toString(36)
-    .slice(2);
-
 const RandomKey = () => {
-  const [key, setKey] = useState(randomKey());
+  const [key, setKey] = useState('');
+
   const changeKey = () => {
-    setKey(randomKey());
+    axios.get('http://localhost:8000/random-key').then(
+      res => {
+        setKey(res.data);
+      },
+      error => {
+        setKey(error.message);
+      }
+    );
   };
+
+  useEffect(() => {
+    changeKey();
+  }, []);
 
   return (
     <div className={styles.content}>
