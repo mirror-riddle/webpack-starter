@@ -1,14 +1,6 @@
-import {
-  // FormControlLabel,
-  // FormLabel,
-  // Radio,
-  // RadioGroup,
-  Slider,
-  Typography,
-} from '@material-ui/core';
+import { Slider, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import styles from './index.css';
 
@@ -16,9 +8,9 @@ import { GridItem } from './grid-item';
 
 const InteractiveGrid = () => {
   const [gap, setGap] = useState(16);
-  const [templateRow, setTemplateRow] = useState(12);
-  const [templateColumn, setTemplateColumn] = useState(12);
-  const items = Array.from(Array(100).keys());
+  const [templateRow, setTemplateRow] = useState(4);
+  const [templateColumn, setTemplateColumn] = useState(8);
+  const items = Array.from(Array(20).keys());
   const gridStyles = {
     gap: `${gap}px`,
     gridTemplateColumns: `repeat(${templateColumn}, 1fr)`,
@@ -44,7 +36,7 @@ const InteractiveGrid = () => {
           <GridItem key={item}>{item}</GridItem>
         ))}
       </div>
-      <SyntaxHighlighter language="css" className={styles.codeContainer}>
+      <SyntaxHighlighter language="css" showLineNumbers>
         {`{\n  gap: ${gap}px;\n  grid-template-columns: repeat(${templateColumn}, 1fr);\n  grid-template-rows: repeat(${templateRow}, 1fr);\n}`}
       </SyntaxHighlighter>
       <div className={styles.sliderContainer}>
@@ -61,8 +53,11 @@ const InteractiveGrid = () => {
           max={24}
           marks={[
             { value: 0, label: '0' },
+            { value: 4, label: '4' },
             { value: 8, label: '8' },
+            { value: 12, label: '12' },
             { value: 16, label: '16' },
+            { value: 20, label: '20' },
             { value: 24, label: '24' },
           ]}
           onChange={handleGapChange}
@@ -80,7 +75,9 @@ const InteractiveGrid = () => {
           max={12}
           marks={[
             { value: 4, label: '4' },
+            { value: 6, label: '6' },
             { value: 8, label: '8' },
+            { value: 10, label: '10' },
             { value: 12, label: '12' },
           ]}
           onChange={handleTemplateColumnChange}
@@ -98,7 +95,9 @@ const InteractiveGrid = () => {
           max={12}
           marks={[
             { value: 4, label: '4' },
+            { value: 6, label: '6' },
             { value: 8, label: '8' },
+            { value: 10, label: '10' },
             { value: 12, label: '12' },
           ]}
           onChange={handleTemplateRowChange}
