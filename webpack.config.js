@@ -57,7 +57,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'public'),
     historyApiFallback: true,
     host: '0.0.0.0',
-    // openPage: 'webpack-starter',
+    openPage: 'webpack-starter',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
