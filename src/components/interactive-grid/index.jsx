@@ -7,6 +7,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import React, { useState } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import styles from './index.css';
 
@@ -14,11 +16,13 @@ import { GridItem } from './grid-item';
 
 const InteractiveGrid = () => {
   const [gap, setGap] = useState(16);
-  const [templateColumn, setTemplateColumn] = useState(8);
-  const items = Array.from(Array(50).keys());
+  const [templateRow, setTemplateRow] = useState(12);
+  const [templateColumn, setTemplateColumn] = useState(12);
+  const items = Array.from(Array(100).keys());
   const gridStyles = {
     gap: `${gap}px`,
     gridTemplateColumns: `repeat(${templateColumn}, 1fr)`,
+    gridTemplateRows: `repeat(${templateRow}, 1fr)`,
   };
 
   const handleGapChange = (event, value) => {
@@ -29,6 +33,10 @@ const InteractiveGrid = () => {
     setTemplateColumn(value);
   };
 
+  const handleTemplateRowChange = (event, value) => {
+    setTemplateRow(value);
+  };
+
   return (
     <div className={styles.content}>
       <div className={styles.gridContainer} style={gridStyles}>
@@ -36,15 +44,18 @@ const InteractiveGrid = () => {
           <GridItem key={item}>{item}</GridItem>
         ))}
       </div>
-      <div className={styles.form}>
+      <SyntaxHighlighter language="css" className={styles.codeContainer}>
+        {`{\n  gap: ${gap}px;\n  grid-template-columns: repeat(${templateColumn}, 1fr);\n  grid-template-rows: repeat(${templateRow}, 1fr);\n}`}
+      </SyntaxHighlighter>
+      <div className={styles.sliderContainer}>
         <Typography id="grid-gap-slider" gutterBottom>
-          grid-gap
+          gap
         </Typography>
         <Slider
           getAriaValueText={value => `${value}px`}
           aria-labelledby="grid-gap-slider"
           defaultValue={gap}
-          valueLabelDisplay="on"
+          valueLabelDisplay="off"
           step={4}
           min={0}
           max={24}
@@ -63,7 +74,7 @@ const InteractiveGrid = () => {
           getAriaValueText={value => `${value}`}
           aria-labelledby="template-column-slider"
           defaultValue={templateColumn}
-          valueLabelDisplay="on"
+          valueLabelDisplay="off"
           step={1}
           min={4}
           max={12}
@@ -74,17 +85,24 @@ const InteractiveGrid = () => {
           ]}
           onChange={handleTemplateColumnChange}
         />
-        {/* <FormLabel>grid-gap</FormLabel>
-        <RadioGroup
-          row
-          value={gap}
-          defaultValue="8"
-          name="grid-gap"
-          onChange={handleGapChange}>
-          <FormControlLabel value="8" label="8px" control={<Radio />} />
-          <FormControlLabel value="16" label="16px" control={<Radio />} />
-          <FormControlLabel value="24" label="24px" control={<Radio />} />
-        </RadioGroup> */}
+        <Typography id="template-row-slider" gutterBottom>
+          grid-template-rows
+        </Typography>
+        <Slider
+          getAriaValueText={value => `${value}`}
+          aria-labelledby="template-row-slider"
+          defaultValue={templateRow}
+          valueLabelDisplay="off"
+          step={1}
+          min={4}
+          max={12}
+          marks={[
+            { value: 4, label: '4' },
+            { value: 8, label: '8' },
+            { value: 12, label: '12' },
+          ]}
+          onChange={handleTemplateRowChange}
+        />
       </div>
     </div>
   );
