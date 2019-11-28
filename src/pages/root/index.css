@@ -1,15 +1,29 @@
 .container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 64px 1fr;
 }
 
-/*
 .header {
-
+  display: flex;
+  align-items: center;
+  border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
 }
-*/
+
+.header a {
+  margin-left: 16px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.header a:hover {
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in;
+}
 
 .content {
-  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

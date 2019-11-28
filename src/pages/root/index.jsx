@@ -13,14 +13,8 @@ const RootPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <ul>
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to={paths.randomKey}>
-            <li>Random Key</li>
-          </Link>
-        </ul>
+        <Link to="/">home</Link>
+        <Link to={paths.randomKey}>random key</Link>
       </div>
       <div className={styles.content}>
         <Switch>
