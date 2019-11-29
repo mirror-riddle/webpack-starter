@@ -2,7 +2,7 @@
   "presets": ["@babel/preset-react"],
   "plugins": [
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "react-syntax-highlighter",
         "libraryDirectory": "dist/esm"
@@ -10,7 +10,7 @@
       "highlighter"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "react-syntax-highlighter/dist/esm/languages/prism",
         "libraryDirectory": ""
@@ -18,7 +18,7 @@
       "languages-prism"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "react-syntax-highlighter/dist/esm/languages/hljs",
         "libraryDirectory": ""
@@ -26,7 +26,7 @@
       "languages-hljs"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "react-syntax-highlighter/dist/esm/styles/prism",
         "libraryDirectory": ""
@@ -34,7 +34,7 @@
       "styles-prism"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "react-syntax-highlighter/dist/esm/styles/hljs",
         "libraryDirectory": ""
@@ -42,7 +42,7 @@
       "styles-hljs"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "@material-ui/core",
         "libraryDirectory": "esm",
@@ -51,7 +51,7 @@
       "core"
     ],
     [
-      "babel-plugin-import",
+      "import",
       {
         "libraryName": "@material-ui/icons",
         "libraryDirectory": "esm",
