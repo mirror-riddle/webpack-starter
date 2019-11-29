@@ -42,7 +42,6 @@ const InteractiveGrid = () => {
         ))}
       </div>
       <SyntaxHighlighter language="css" showLineNumbers style={darcula}>
-        {/* <SyntaxHighlighter language="css" showLineNumbers> */}
         {`{\n  gap: ${gap}px;\n  grid-template-columns: repeat(${templateColumn}, 1fr);\n  grid-template-rows: repeat(${templateRow}, 1fr);\n}`}
       </SyntaxHighlighter>
       <div className={styles.sliderContainer}>
