@@ -1,10 +1,15 @@
 import { Slider, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { css } from 'react-syntax-highlighter/dist/esm/languages/prism';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import styles from './index.css';
 
 import { GridItem } from './grid-item';
+
+SyntaxHighlighter.registerLanguage('css', css);
 
 const InteractiveGrid = () => {
   const [gap, setGap] = useState(16);
@@ -36,7 +41,8 @@ const InteractiveGrid = () => {
           <GridItem key={item}>{item}</GridItem>
         ))}
       </div>
-      <SyntaxHighlighter language="css" showLineNumbers>
+      <SyntaxHighlighter language="css" showLineNumbers style={darcula}>
+        {/* <SyntaxHighlighter language="css" showLineNumbers> */}
         {`{\n  gap: ${gap}px;\n  grid-template-columns: repeat(${templateColumn}, 1fr);\n  grid-template-rows: repeat(${templateRow}, 1fr);\n}`}
       </SyntaxHighlighter>
       <div className={styles.sliderContainer}>

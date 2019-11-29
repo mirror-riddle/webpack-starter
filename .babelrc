@@ -4,6 +4,13 @@
     [
       "babel-plugin-import",
       {
+        "libraryName": "react-syntax-highlighter",
+        "libraryDirectory": "dist/esm"
+      }
+    ],
+    [
+      "babel-plugin-import",
+      {
         "libraryName": "@material-ui/core",
         "libraryDirectory": "esm",
         "camel2DashComponentName": false
