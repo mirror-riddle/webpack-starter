@@ -3,6 +3,6 @@
     "baseUrl": "src",
     "jsx": "preserve"
   },
-  "exclude": ["node_modules", "dist", "docs"],
+  "exclude": ["node_modules", "dist", "build", "demo"],
   "include": ["src"]
 }
