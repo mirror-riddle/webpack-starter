@@ -6,5 +6,6 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: paths.build,
+    filename: '[contenthash].min.js',
   },
 });

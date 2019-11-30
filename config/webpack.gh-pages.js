@@ -1,9 +1,8 @@
 const merge = require('webpack-merge');
 const paths = require('./paths');
-const common = require('./webpack.common');
+const prod = require('./webpack.prod');
 
-module.exports = merge(common, {
-  mode: 'production',
+module.exports = merge(prod, {
   output: {
     path: paths.demo,
     publicPath: '/webpack-starter/demo/',
