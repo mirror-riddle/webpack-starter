@@ -23,7 +23,11 @@ const RandomKey = () => {
   return (
     <div className={styles.content}>
       <code className={styles.code}>{key}</code>
-      <Button variant="contained" color="primary" onClick={changeKey}>
+      <Button
+        className={styles.button}
+        variant="contained"
+        color="primary"
+        onClick={changeKey}>
         change key
       </Button>
     </div>

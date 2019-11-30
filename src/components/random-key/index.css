@@ -17,3 +17,7 @@
   text-align: center;
   background-color: black;
 }
+
+.button {
+  height: 48px;
+}
