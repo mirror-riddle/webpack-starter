@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { RootPage } from './pages/root';
 
-const App = () => (
+const App: React.FunctionComponent = () => (
   <Router>
     <RootPage />
   </Router>

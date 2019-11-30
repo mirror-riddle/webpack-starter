@@ -11,7 +11,7 @@ import { GridItem } from './grid-item';
 
 SyntaxHighlighter.registerLanguage('css', css);
 
-const InteractiveGrid = () => {
+const InteractiveGrid: React.FunctionComponent = () => {
   const [gap, setGap] = useState(16);
   const [templateRow, setTemplateRow] = useState(4);
   const [templateColumn, setTemplateColumn] = useState(8);

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './index.css';
 
-const RandomKey = () => {
+const RandomKey: React.FunctionComponent = () => {
   const [key, setKey] = useState('');
 
   const changeKey = async () => {

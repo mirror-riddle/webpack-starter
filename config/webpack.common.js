@@ -36,6 +36,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)$/,
+        include: paths.src,
+        use: ['ts-loader', 'babel-loader'],
+      },
+      {
         test: /\.(js|jsx)$/,
         include: paths.src,
         use: 'babel-loader',
@@ -69,7 +74,7 @@ module.exports = {
     host: '0.0.0.0',
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.json'],
+    extensions: ['.jsx', '.js', '.json', '.tsx', '.ts'],
     modules: [paths.src, paths.nodeModules],
   },
 };

@@ -5,7 +5,7 @@ Webpack starter for demostration.
 ## Developement
 
     yarn
-    yarn start
+    yarn run dev
 
 ## Demo
 

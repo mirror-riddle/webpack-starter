@@ -11,7 +11,7 @@ const paths = {
   interaciveGrid: '/interactive-grid',
 };
 
-const RootPage = () => {
+const RootPage: React.FunctionComponent = () => {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
