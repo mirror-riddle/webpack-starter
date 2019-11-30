@@ -1,13 +1,11 @@
 # Webpack Starter
 
-personal webpack starter for react.
-
----
+Webpack starter for demostration.
 
 ## Developement
 
-    yarn           // install
-    yarn start     // start
+    yarn
+    yarn start
 
 ## Demo
 

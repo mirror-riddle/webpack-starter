@@ -5,8 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "gh-page": "webpack --mode=production --output-path=docs --output-public-path=/webpack-starter/"
+    "start": "webpack-dev-server --open"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
