@@ -13,13 +13,13 @@ const paths = {
 
 const RootPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <div className={styles.page}>
+      <header className={styles.header}>
         <Link to="/">home</Link>
         <Link to={paths.randomKey}>random key</Link>
         <Link to={paths.interaciveGrid}>interactive grid</Link>
-      </div>
-      <div className={styles.content}>
+      </header>
+      <main className={styles.main}>
         <Switch>
           <Route path={paths.randomKey}>
             <RandomKey />
@@ -28,7 +28,7 @@ const RootPage = () => {
             <InteractiveGrid />
           </Route>
         </Switch>
-      </div>
+      </main>
     </div>
   );
 };

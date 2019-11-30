@@ -1,15 +1,17 @@
-.container {
+.page {
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
 }
 
 .header {
-  flex-shrink: 0;
+  flex: none;
   height: 64px;
   display: flex;
   align-items: center;
+  background-color: #f4f6f8;
   border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
-  background-color: #fff;
   position: sticky;
   top: 0;
 }
@@ -26,6 +28,7 @@
   transition: opacity 0.15s ease-in;
 }
 
-.content {
-  flex-grow: 1;
+.main {
+  flex: auto;
+  background-color: #fff;
 }
