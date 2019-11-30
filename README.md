@@ -9,4 +9,4 @@ Webpack starter for demostration.
 
 ## Demo
 
-[github page](https://mirror-riddle.github.io/webpack-starter)
+[github page](https://mirror-riddle.github.io/webpack-starter/demo)
