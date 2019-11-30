@@ -1,16 +1,16 @@
 .content {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 50%;
 }
 
-.code {
+.pre {
   padding: 16px;
   font-size: 16px;
   line-height: 16px;
   font-family: Monaco;
-  margin-right: 16px;
   height: 48px;
   width: 180px;
   color: white;
