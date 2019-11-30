@@ -4,46 +4,6 @@
     [
       "import",
       {
-        "libraryName": "react-syntax-highlighter",
-        "libraryDirectory": "dist/esm"
-      },
-      "highlighter"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "react-syntax-highlighter/dist/esm/languages/prism",
-        "libraryDirectory": ""
-      },
-      "languages-prism"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "react-syntax-highlighter/dist/esm/languages/hljs",
-        "libraryDirectory": ""
-      },
-      "languages-hljs"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "react-syntax-highlighter/dist/esm/styles/prism",
-        "libraryDirectory": ""
-      },
-      "styles-prism"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "react-syntax-highlighter/dist/esm/styles/hljs",
-        "libraryDirectory": ""
-      },
-      "styles-hljs"
-    ],
-    [
-      "import",
-      {
         "libraryName": "@material-ui/core",
         "libraryDirectory": "esm",
         "camel2DashComponentName": false
