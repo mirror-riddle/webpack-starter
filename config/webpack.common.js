@@ -1,14 +1,11 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const paths = require('./paths');
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.jsx',
+  entry: paths.srcIndex,
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
   },
   optimization: {
     moduleIds: 'hashed',
@@ -40,12 +37,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, 'src'),
+        include: paths.src,
         use: 'babel-loader',
       },
       {
         test: /\.(css)$/,
-        include: path.resolve(__dirname, 'src'),
+        include: paths.src,
         use: [
           'style-loader',
           {
@@ -63,20 +60,16 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: paths.publicIndex,
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: paths.public,
     historyApiFallback: true,
     host: '0.0.0.0',
-    // openPage: 'webpack-starter',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
-    modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'node_modules'),
-    ],
+    modules: [paths.src, paths.nodeModules],
   },
 };
