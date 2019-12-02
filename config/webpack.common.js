@@ -38,7 +38,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         include: paths.src,
-        use: ['ts-loader', 'babel-loader'],
+        use: ['babel-loader', 'ts-loader'],
       },
       {
         test: /\.(js|jsx)$/,
