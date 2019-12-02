@@ -22,17 +22,17 @@ const InteractiveGrid: React.FunctionComponent = () => {
     gridTemplateRows: `repeat(${templateRow}, 1fr)`,
   };
 
-  const handleGapChange = (event: React.MouseEvent, value: number): void => {
-    setGap(value);
+  const handleChange = (dispatch: React.Dispatch<React.SetStateAction<number>>) => {
+    return (_event: React.ChangeEvent<{}>, value: number | number[]): void => {
+      if (typeof value === 'number') {
+        dispatch(value);
+      }
+    };
   };
 
-  const handleTemplateColumnChange = (event: React.MouseEvent, value: number): void => {
-    setTemplateColumn(value);
-  };
-
-  const handleTemplateRowChange = (event: React.MouseEvent, value: number): void => {
-    setTemplateRow(value);
-  };
+  const handleGapChange = handleChange(setGap);
+  const handleTemplateColumnChange = handleChange(setTemplateColumn);
+  const handleTemplateRowChange = handleChange(setTemplateRow);
 
   return (
     <div className={styles.content}>

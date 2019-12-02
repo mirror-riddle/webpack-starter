@@ -1,16 +1,12 @@
 {
+  "extends": "@shopify/typescript-configs/dom.json",
   "compilerOptions": {
     "baseUrl": "src",
     "jsx": "preserve",
     "module": "es6",
     "target": "es5",
-    "lib": ["es6", "dom"],
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "allowJs": false
+    "lib": ["es6", "dom", "dom.iterable", "es2018", "esnext"],
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }

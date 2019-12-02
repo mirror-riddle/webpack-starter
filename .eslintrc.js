@@ -5,7 +5,8 @@ module.exports = {
     es6: true,
   },
   extends: [
-    // Uses the recommended rules from @eslint-config-airbnb
+    // Uses the recommended rules from @eslint-config-airbnb. It includes eslint-plugin-import, eslint-plugin-react,
+    // eslint-plugin-react-hooks, and eslint-plugin-jsx-a11y.
     'airbnb',
     // Uses the recommended rules from @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/recommended',
