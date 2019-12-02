@@ -7,7 +7,7 @@ import styles from './index.css';
 const RandomKey: React.FunctionComponent = () => {
   const [key, setKey] = useState('');
 
-  const changeKey: () => void = async () => {
+  const changeKey = async (): Promise<void> => {
     try {
       const res = await axios.get('http://localhost:8000/random-key');
       setKey(res.data);

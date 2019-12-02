@@ -1,0 +1,30 @@
+{
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  "eslint.workingDirectories": [
+    {
+      "directory": "./",
+      "changeProcessCWD": true
+    }
+  ],
+  "markdownlint.config": {
+    "MD046": {
+      "style": "consistent"
+    }
+  },
+  "[typescript|typescriptreact|json|html|css|javascript|javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
