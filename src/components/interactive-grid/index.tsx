@@ -2,7 +2,7 @@ import { Slider, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import css  from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
 import darcula from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
 
 import styles from './index.css';
@@ -22,18 +22,15 @@ const InteractiveGrid: React.FunctionComponent = () => {
     gridTemplateRows: `repeat(${templateRow}, 1fr)`,
   };
 
-  const handleGapChange = (event: React.MouseEvent, value: number) => {
+  const handleGapChange = (event: React.MouseEvent, value: number): void => {
     setGap(value);
   };
 
-  const handleTemplateColumnChange = (
-    event: React.MouseEvent,
-    value: number
-  ) => {
+  const handleTemplateColumnChange = (event: React.MouseEvent, value: number): void => {
     setTemplateColumn(value);
   };
 
-  const handleTemplateRowChange = (event: React.MouseEvent, value: number) => {
+  const handleTemplateRowChange = (event: React.MouseEvent, value: number): void => {
     setTemplateRow(value);
   };
 
@@ -52,7 +49,7 @@ const InteractiveGrid: React.FunctionComponent = () => {
           gap
         </Typography>
         <Slider
-          getAriaValueText={(value: number) => `${value}px`}
+          getAriaValueText={(value: number): string => `${value}px`}
           aria-labelledby="grid-gap-slider"
           defaultValue={gap}
           valueLabelDisplay="off"
@@ -74,7 +71,7 @@ const InteractiveGrid: React.FunctionComponent = () => {
           grid-template-columns
         </Typography>
         <Slider
-          getAriaValueText={(value: number) => `${value}`}
+          getAriaValueText={(value: number): string => `${value}`}
           aria-labelledby="template-column-slider"
           defaultValue={templateColumn}
           valueLabelDisplay="off"
@@ -94,7 +91,7 @@ const InteractiveGrid: React.FunctionComponent = () => {
           grid-template-rows
         </Typography>
         <Slider
-          getAriaValueText={(value: number) => `${value}`}
+          getAriaValueText={(value: number): string => `${value}`}
           aria-labelledby="template-row-slider"
           defaultValue={templateRow}
           valueLabelDisplay="off"

@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const paths = require('./paths');
 
 module.exports = {
@@ -38,7 +39,15 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         include: paths.src,
-        use: ['babel-loader', 'ts-loader'],
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(js|jsx)$/,
@@ -66,6 +75,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: paths.publicIndex,
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      eslint: true,
     }),
   ],
   devServer: {
