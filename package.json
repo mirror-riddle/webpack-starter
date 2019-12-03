@@ -66,5 +66,14 @@
     "trailingComma": "es5",
     "printWidth": 120,
     "endOfLine": "lf"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/transform-async-to-generator"
+    ]
   }
 }
