@@ -65,5 +65,11 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'warn',
       },
     },
+    {
+      files: ['*.test.ts', '*.test.tsx'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
   ],
 };

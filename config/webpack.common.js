@@ -56,6 +56,12 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
+        exclude: /\.module\.css$/,
+        include: paths.src,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.module\.(css)$/,
         include: paths.src,
         use: [
           'style-loader',

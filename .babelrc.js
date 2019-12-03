@@ -1,4 +1,12 @@
 module.exports = {
-  presets: ['@babel/react'],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: '> 0.25%, not dead',
+      },
+    ],
+    '@babel/preset-react',
+  ],
   plugins: ['@babel/transform-async-to-generator'],
 };

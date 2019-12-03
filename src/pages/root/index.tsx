@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { InteractiveGrid } from 'components/interactive-grid';
 import { RandomKey } from 'components/random-key';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 const paths = {
   randomKey: '/random-key',

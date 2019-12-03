@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 const RandomKey: React.FunctionComponent = () => {
   const [key, setKey] = useState('');
