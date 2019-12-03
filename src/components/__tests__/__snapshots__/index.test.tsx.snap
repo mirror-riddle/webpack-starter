@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render Random Key 1`] = `
+exports[`render <GridItem /> 1`] = `
+<div
+  className="cell item"
+>
+  <div
+    className="content"
+  />
+</div>
+`;
+
+exports[`render <RandomKey /> 1`] = `
 <div
   className="content"
 >
