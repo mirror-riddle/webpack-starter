@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components tests:  GridItem className contains cell 1`] = `
+exports[`components tests:  GridCell className contains cell 1`] = `
 <div
-  className="cell item"
+  className="cell cell"
 >
   <div
     className="content"
