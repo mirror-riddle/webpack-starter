@@ -1,28 +1,23 @@
-import { Slider, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Slider, Typography } from '@material-ui/core';
 
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
-import darcula from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
+import { GridDisplayer, CssHighlighter } from 'components';
 
 import styles from './index.module.css';
 
-import { GridItem } from './grid-item';
-
-SyntaxHighlighter.registerLanguage('css', css);
-
-const InteractiveGrid: React.FunctionComponent = () => {
+const GridPage: React.FunctionComponent = () => {
   const [gap, setGap] = useState(16);
   const [templateRow, setTemplateRow] = useState(4);
   const [templateColumn, setTemplateColumn] = useState(8);
-  const items = Array.from(Array(20).keys());
   const gridStyles = {
     gap: `${gap}px`,
     gridTemplateColumns: `repeat(${templateColumn}, 1fr)`,
     gridTemplateRows: `repeat(${templateRow}, 1fr)`,
   };
 
-  const handleChange = (dispatch: React.Dispatch<React.SetStateAction<number>>) => {
+  const handleChange = (
+    dispatch: React.Dispatch<React.SetStateAction<number>>
+  ) => {
     return (_event: React.ChangeEvent<{}>, value: number | number[]): void => {
       if (typeof value === 'number') {
         dispatch(value);
@@ -35,16 +30,10 @@ const InteractiveGrid: React.FunctionComponent = () => {
   const handleTemplateRowChange = handleChange(setTemplateRow);
 
   return (
-    <div className={styles.content}>
-      <div className={styles.gridContainer} style={gridStyles}>
-        {items.map(item => (
-          <GridItem key={item}>{item}</GridItem>
-        ))}
-      </div>
-      <SyntaxHighlighter language="css" showLineNumbers style={darcula}>
-        {`{\n  gap: ${gap}px;\n  grid-template-columns: repeat(${templateColumn}, 1fr);\n  grid-template-rows: repeat(${templateRow}, 1fr);\n}`}
-      </SyntaxHighlighter>
-      <div className={styles.sliderContainer}>
+    <div className={styles.page}>
+      <GridDisplayer className={styles.grid} style={gridStyles} />
+      <CssHighlighter codeObject={gridStyles} />
+      <div className={styles.slider}>
         <Typography id="grid-gap-slider" gutterBottom>
           gap
         </Typography>
@@ -112,4 +101,4 @@ const InteractiveGrid: React.FunctionComponent = () => {
   );
 };
 
-export { InteractiveGrid };
+export { GridPage };

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import { Button } from '@material-ui/core';
 
 import styles from './index.module.css';
 
-const RandomKey: React.FunctionComponent = () => {
+const HomePage: React.FunctionComponent = () => {
   const [key, setKey] = useState('');
 
   const changeKey = async (): Promise<void> => {
@@ -21,7 +21,7 @@ const RandomKey: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.content}>
+    <div className={styles.page}>
       <pre className={styles.pre}>
         <code>{key}</code>
       </pre>
@@ -32,4 +32,4 @@ const RandomKey: React.FunctionComponent = () => {
   );
 };
 
-export { RandomKey };
+export { HomePage };

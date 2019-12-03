@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { RootPage } from './pages/root';
+import { AppNoRouter } from './app-no-router';
 
 const App: React.FunctionComponent = () => (
   <Router basename="/webpack-starter/demo">
-    <RootPage />
+    <AppNoRouter />
   </Router>
 );
 
