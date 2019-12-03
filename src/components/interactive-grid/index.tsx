@@ -2,16 +2,16 @@ import { Slider, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { css } from 'react-syntax-highlighter/dist/esm/languages/prism';
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import darcula from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 import { GridItem } from './grid-item';
 
 SyntaxHighlighter.registerLanguage('css', css);
 
-const InteractiveGrid = () => {
+const InteractiveGrid: React.FunctionComponent = () => {
   const [gap, setGap] = useState(16);
   const [templateRow, setTemplateRow] = useState(4);
   const [templateColumn, setTemplateColumn] = useState(8);
@@ -22,17 +22,17 @@ const InteractiveGrid = () => {
     gridTemplateRows: `repeat(${templateRow}, 1fr)`,
   };
 
-  const handleGapChange = (event, value) => {
-    setGap(value);
+  const handleChange = (dispatch: React.Dispatch<React.SetStateAction<number>>) => {
+    return (_event: React.ChangeEvent<{}>, value: number | number[]): void => {
+      if (typeof value === 'number') {
+        dispatch(value);
+      }
+    };
   };
 
-  const handleTemplateColumnChange = (event, value) => {
-    setTemplateColumn(value);
-  };
-
-  const handleTemplateRowChange = (event, value) => {
-    setTemplateRow(value);
-  };
+  const handleGapChange = handleChange(setGap);
+  const handleTemplateColumnChange = handleChange(setTemplateColumn);
+  const handleTemplateRowChange = handleChange(setTemplateRow);
 
   return (
     <div className={styles.content}>
@@ -49,7 +49,7 @@ const InteractiveGrid = () => {
           gap
         </Typography>
         <Slider
-          getAriaValueText={value => `${value}px`}
+          getAriaValueText={(value: number): string => `${value}px`}
           aria-labelledby="grid-gap-slider"
           defaultValue={gap}
           valueLabelDisplay="off"
@@ -71,7 +71,7 @@ const InteractiveGrid = () => {
           grid-template-columns
         </Typography>
         <Slider
-          getAriaValueText={value => `${value}`}
+          getAriaValueText={(value: number): string => `${value}`}
           aria-labelledby="template-column-slider"
           defaultValue={templateColumn}
           valueLabelDisplay="off"
@@ -91,7 +91,7 @@ const InteractiveGrid = () => {
           grid-template-rows
         </Typography>
         <Slider
-          getAriaValueText={value => `${value}`}
+          getAriaValueText={(value: number): string => `${value}`}
           aria-labelledby="template-row-slider"
           defaultValue={templateRow}
           valueLabelDisplay="off"

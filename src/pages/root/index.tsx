@@ -4,22 +4,22 @@ import { Link, Route, Switch } from 'react-router-dom';
 import { InteractiveGrid } from 'components/interactive-grid';
 import { RandomKey } from 'components/random-key';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 const paths = {
   randomKey: '/random-key',
   interaciveGrid: '/interactive-grid',
 };
 
-const RootPage = () => {
+const RootPage: React.FunctionComponent = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <div className={styles.page}>
+      <header className={styles.header}>
         <Link to="/">home</Link>
         <Link to={paths.randomKey}>random key</Link>
         <Link to={paths.interaciveGrid}>interactive grid</Link>
-      </div>
-      <div className={styles.content}>
+      </header>
+      <main className={styles.main}>
         <Switch>
           <Route path={paths.randomKey}>
             <RandomKey />
@@ -28,7 +28,7 @@ const RootPage = () => {
             <InteractiveGrid />
           </Route>
         </Switch>
-      </div>
+      </main>
     </div>
   );
 };
