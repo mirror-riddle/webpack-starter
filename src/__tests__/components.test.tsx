@@ -1,8 +1,8 @@
 import React from 'react';
 import Renderer from 'react-test-renderer';
 
-import { GridItem } from '../interactive-grid/grid-item';
-import { RandomKey } from '../random-key';
+import { GridItem } from 'components/interactive-grid/grid-item';
+import { RandomKey } from 'components/random-key';
 
 test('render <GridItem />', () => {
   const json = Renderer.create(<GridItem className="cell" />).toJSON();
