@@ -7,7 +7,7 @@ Webpack starter for demostration.
     yarn
 
     // start webpack-dev-server
-    yarn run dev
+    yarn run start
 
 ## Demo
 
@@ -22,5 +22,7 @@ Webpack starter for demostration.
 [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+[Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 
 All extendsion settings are inside [settings.json](./.vscode/settings.json).
