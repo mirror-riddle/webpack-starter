@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Slider, Typography } from '@material-ui/core';
 
-import { GridItem, CssHighlighter } from 'components';
+import { GridDisplayer, CssHighlighter } from 'components';
 
 import styles from './index.module.css';
 
@@ -9,7 +9,6 @@ const GridPage: React.FunctionComponent = () => {
   const [gap, setGap] = useState(16);
   const [templateRow, setTemplateRow] = useState(4);
   const [templateColumn, setTemplateColumn] = useState(8);
-  const items = Array.from(Array(20).keys());
   const gridStyles = {
     gap: `${gap}px`,
     gridTemplateColumns: `repeat(${templateColumn}, 1fr)`,
@@ -32,11 +31,7 @@ const GridPage: React.FunctionComponent = () => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.grid} style={gridStyles}>
-        {items.map(item => (
-          <GridItem key={item}>{item}</GridItem>
-        ))}
-      </div>
+      <GridDisplayer className={styles.grid} style={gridStyles} />
       <CssHighlighter codeObject={gridStyles} />
       <div className={styles.slider}>
         <Typography id="grid-gap-slider" gutterBottom>

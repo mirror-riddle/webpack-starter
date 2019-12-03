@@ -3,19 +3,19 @@ import React from 'react';
 
 import styles from './index.module.css';
 
-interface GridItemProps {
+interface GridCellProps {
   className?: string;
 }
 
-const GridItem: React.FunctionComponent<GridItemProps> = props => {
+const GridCell: React.FunctionComponent<GridCellProps> = props => {
   const { className, children } = props;
-  const itemClassName = classNames(className, styles.item);
+  const cellClassName = classNames(className, styles.cell);
 
   return (
-    <div className={itemClassName}>
+    <div className={cellClassName}>
       <div className={styles.content}>{children}</div>
     </div>
   );
 };
 
-export { GridItem };
+export { GridCell };
