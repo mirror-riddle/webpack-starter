@@ -13,18 +13,6 @@ module.exports = {
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
-        // react: {
-        //   test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-        //   name: 'react',
-        //   chunks: 'all',
-        //   priority: 1,
-        // },
-        // highlighter: {
-        //   test: /[\\/]node_modules[\\/](react-syntax-highlighter)[\\/]/,
-        //   name: 'highlighter',
-        //   chunks: 'all',
-        //   priority: 1,
-        // },
         verdors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'verdors',
