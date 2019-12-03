@@ -3,11 +3,11 @@ import React from 'react';
 
 import styles from './index.module.css';
 
-interface Props {
+interface GridItemProps {
   className?: string;
 }
 
-const GridItem: React.FunctionComponent<Props> = props => {
+const GridItem: React.FunctionComponent<GridItemProps> = props => {
   const { className, children } = props;
   const itemClassName = classNames(className, styles.item);
 
