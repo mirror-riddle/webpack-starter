@@ -75,5 +75,79 @@
     "plugins": [
       "@babel/transform-async-to-generator"
     ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "extends": [
+      "airbnb",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "prettier/react",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [],
+    "ignorePatterns": [
+      "dist/",
+      "build/",
+      "demo/",
+      "node_modules/"
+    ],
+    "rules": {
+      "import/no-unresolved": "off",
+      "import/prefer-default-export": "off",
+      "import/no-extraneous-dependencies": [
+        "warn",
+        {
+          "packageDir": "./"
+        }
+      ],
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/explicit-function-return-type": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "rules": {
+          "react/prop-types": "off",
+          "react/jsx-filename-extension": "off",
+          "@typescript-eslint/no-var-requires": "warn",
+          "@typescript-eslint/explicit-function-return-type": "warn"
+        }
+      },
+      {
+        "files": [
+          "*.test.ts",
+          "*.test.tsx"
+        ],
+        "rules": {
+          "no-undef": "off"
+        }
+      }
+    ]
   }
 }
