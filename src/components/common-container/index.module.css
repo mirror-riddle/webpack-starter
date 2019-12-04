@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 8px auto;
+}
+
+.header {
+  flex: none;
+  padding: 8px 0;
+}
+
+.content {
+  flex: auto;
+}
