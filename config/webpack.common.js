@@ -5,7 +5,7 @@ const paths = require('./paths');
 module.exports = {
   entry: paths.srcIndex,
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
   },
   optimization: {
     moduleIds: 'hashed',
