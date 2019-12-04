@@ -1,5 +1,5 @@
-import { LinkItem } from 'components/app-header';
-import { RouteItem } from 'components/app-content';
+import { LinkItem } from 'components/app/app-header';
+import { RouteItem } from 'components/app/app-content';
 import { HomePage, GridPage } from 'pages';
 
 const items = [

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { AppContent, AppHeader } from 'components';
+import { AppContent } from '../app-content';
+import { AppHeader } from '../app-header';
 import { links, routes } from './links-and-routes';
 import styles from './index.module.css';
 
