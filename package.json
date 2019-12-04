@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.7.1",
+    "@reduxjs/toolkit": "^1.1.0",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "decamelize": "^1.2.0",
@@ -73,7 +74,9 @@
     "clearMocks": true,
     "coverageDirectory": "coverage",
     "moduleNameMapper": {
+      "^app/(.*)$": "<rootDir>/src/app/$1",
       "^components/(.*)$": "<rootDir>/src/components/$1",
+      "^pages/(.*)$": "<rootDir>/src/pages/$1",
       "^.+\\.module\\.(css)$": "identity-obj-proxy"
     },
     "transform": {
