@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Mark, Slider } from '@material-ui/core';
 
 import { CommonContainer } from 'components';
@@ -15,13 +16,14 @@ interface GridSliderProps {
 
 const GridSlider: React.FunctionComponent<GridSliderProps> = props => {
   const { title, defaultValue, min, max, step, marks, onChange } = props;
+  const dispatch = useDispatch();
 
   const handleChange = (
     _event: React.ChangeEvent<{}>,
     value: number | number[]
   ): void => {
     if (typeof value === 'number' && onChange !== undefined) {
-      onChange(value);
+      dispatch(onChange(value));
     }
   };
 

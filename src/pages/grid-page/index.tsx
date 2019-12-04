@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
+import { RootState } from 'services/redux/root-reducer';
 import { CssHighlighter, GridDisplayer, GridSlider } from 'components';
 import { GridTemplateSlider } from './grid-template-slider';
+import { setGap, setRow, setColumn } from './index.slice';
 
 import styles from './index.module.css';
 
 const GridPage: React.FunctionComponent = () => {
-  const [gap, setGap] = useState(16);
-  const [templateRow, setTemplateRow] = useState(4);
-  const [templateColumn, setTemplateColumn] = useState(8);
+  const { gap, row, column } = useSelector(
+    (state: RootState) => state.gridPage
+  );
   const gridStyles = {
     gap: `${gap}px`,
-    gridTemplateColumns: `repeat(${templateColumn}, 1fr)`,
-    gridTemplateRows: `repeat(${templateRow}, 1fr)`,
+    gridTemplateRows: `repeat(${row}, 1fr)`,
+    gridTemplateColumns: `repeat(${column}, 1fr)`,
   };
 
   return (
@@ -39,13 +42,13 @@ const GridPage: React.FunctionComponent = () => {
         />
         <GridTemplateSlider
           title="grid-template-columns"
-          onChange={setTemplateColumn}
-          defaultValue={templateColumn}
+          onChange={setColumn}
+          defaultValue={column}
         />
         <GridTemplateSlider
           title="grid-template-rows"
-          onChange={setTemplateRow}
-          defaultValue={templateRow}
+          onChange={setRow}
+          defaultValue={row}
         />
       </div>
     </div>
