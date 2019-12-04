@@ -14,9 +14,13 @@ interface CssHighlighterProps {
 
 const objectToString = (styles: Record<string, string>): string => {
   const styleArray = Object.entries(styles);
-  return styleArray
-    .map(style => `  ${decamelize(style[0], '-')}: ${style[1]};\n`)
+  const styleString = styleArray
+    .map(style => {
+      const atrribute = decamelize(style[0], '-');
+      return `  ${atrribute}: ${style[1]};\n`;
+    })
     .join('');
+  return styleString ? `{\n${styleString}}` : '';
 };
 
 const CssHighlighter: React.FunctionComponent<CssHighlighterProps> = props => {
