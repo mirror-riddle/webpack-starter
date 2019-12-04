@@ -30,5 +30,5 @@ const gridPageSlice = createSlice({
   },
 });
 
-export const { reducer: gridPageReducer, name: gridPageName } = gridPageSlice;
+export const { reducer: gridPageReducer } = gridPageSlice;
 export const { setGap, setRow, setColumn } = gridPageSlice.actions;

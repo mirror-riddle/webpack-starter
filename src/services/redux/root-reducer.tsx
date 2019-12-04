@@ -1,9 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { gridPageReducer, gridPageName } from 'pages/grid-page/index.slice';
+import { gridPageReducer } from 'pages/grid-page/index.slice';
+import { homePageReducer } from 'pages/home-page/index.slice';
 
 const rootReducer = combineReducers({
-  [gridPageName]: gridPageReducer,
+  homePage: homePageReducer,
+  gridPage: gridPageReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
