@@ -32,7 +32,10 @@ const getRandomKey = (): AppThunk => async (dispatch): Promise<void> => {
     const res = await axios.get('http://localhost:8000/random-key');
     dispatch(setKey(res.data));
   } catch (error) {
-    dispatch(setKey(error.message));
+    const randomKey = Math.random()
+      .toString(36)
+      .slice(2);
+    dispatch(setKey(randomKey));
   }
 };
 
