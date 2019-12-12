@@ -1,4 +1,4 @@
-import { HomePage, GridPage } from 'pages';
+import { HomePage, GridPage, CanvasPage } from 'pages';
 import { LinkItem } from '../app-header';
 import { RouteItem } from '../app-content';
 
@@ -12,6 +12,11 @@ const items = [
     name: 'grid',
     path: '/grid',
     page: GridPage,
+  },
+  {
+    name: 'canvas',
+    path: '/canvas',
+    page: CanvasPage,
   },
 ];
 

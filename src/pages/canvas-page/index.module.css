@@ -1,0 +1,8 @@
+.page {
+  padding: 16px;
+  text-align: center;
+}
+
+.canvas {
+  border: dashed 1px rgba(0, 0, 0, 0.1);
+}
