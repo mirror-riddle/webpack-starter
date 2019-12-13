@@ -1,3 +1,4 @@
+import React from 'react';
 import { HomePage, GridPage, CanvasPage } from 'pages';
 import { LinkItem } from '../app-header';
 import { RouteItem } from '../app-content';
@@ -6,17 +7,17 @@ const items = [
   {
     name: 'home',
     path: '/',
-    page: HomePage,
+    page: <HomePage />,
   },
   {
     name: 'grid',
     path: '/grid',
-    page: GridPage,
+    page: <GridPage />,
   },
   {
     name: 'canvas',
     path: '/canvas',
-    page: CanvasPage,
+    page: <CanvasPage />,
   },
 ];
 

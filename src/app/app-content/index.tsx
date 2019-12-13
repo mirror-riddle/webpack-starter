@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 export interface RouteItem {
   path: string;
-  page: React.FunctionComponent;
+  page: JSX.Element;
 }
 
 interface AppContentProps {
@@ -23,12 +23,9 @@ const AppContent: React.FunctionComponent<AppContentProps> = props => {
       <Switch>
         {routes &&
           routes.map(route => (
-            <Route
-              key={route.path}
-              path={route.path}
-              component={route.page}
-              exact
-            />
+            <Route key={route.path} path={route.path} exact>
+              {route.page}
+            </Route>
           ))}
       </Switch>
     </section>
