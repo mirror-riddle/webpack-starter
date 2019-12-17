@@ -1,31 +1,31 @@
 import { Button } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from 'services/redux/root-reducer';
+import { Page } from 'components';
 import { getRandomKey } from './index.slice';
-
 import styles from './index.module.css';
 
 const HomePage: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const { key } = useSelector((state: RootState) => state.homePage);
 
-  const changeKey = (): void => {
+  const changeKey = useCallback(() => {
     dispatch(getRandomKey());
-  };
+  }, [dispatch, getRandomKey]);
 
-  useEffect(changeKey, []);
+  useEffect(changeKey, [changeKey]);
 
   return (
-    <div className={styles.page}>
+    <Page className={styles.page}>
       <pre className={styles.pre}>
         <code>{key}</code>
       </pre>
       <Button variant="contained" color="primary" onClick={changeKey}>
         change
       </Button>
-    </div>
+    </Page>
   );
 };
 

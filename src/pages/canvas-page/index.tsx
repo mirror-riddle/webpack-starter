@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import { Page } from 'components';
 import styles from './index.module.css';
 
 const CanvasPage: React.FunctionComponent = () => {
@@ -19,14 +20,14 @@ const CanvasPage: React.FunctionComponent = () => {
   }, [canvasRef]);
 
   return (
-    <div className={styles.page}>
+    <Page className={styles.page}>
       <canvas
         ref={canvasRef}
         className={styles.canvas}
         height="400"
         width="400"
       />
-    </div>
+    </Page>
   );
 };
 

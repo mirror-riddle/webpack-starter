@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { RootState } from 'services/redux/root-reducer';
-import { CssHighlighter, GridDisplayer, GridSlider } from 'components';
+import { CssHighlighter, GridDisplayer, GridSlider, Page } from 'components';
 import { GridTemplateSlider } from './grid-template-slider';
 import { setGap, setRow, setColumn } from './index.slice';
 
@@ -19,7 +19,7 @@ const GridPage: React.FunctionComponent = () => {
   };
 
   return (
-    <div className={styles.page}>
+    <Page>
       <GridDisplayer className={styles.grid} style={gridStyles} />
       <CssHighlighter codeObject={gridStyles} />
       <div className={styles.slider}>
@@ -51,7 +51,7 @@ const GridPage: React.FunctionComponent = () => {
           defaultValue={row}
         />
       </div>
-    </div>
+    </Page>
   );
 };
 
